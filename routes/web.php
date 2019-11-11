@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
+//Controller Based Route
+Route::get('/', ['uses' => 'HomeController@index'])->middleware('checkAge');
+
+//Simple Closure 
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+//Route Grouped
+Route::prefix('admin')->group(function () {
+    Route::get('users', function () {
+    	//Go to URL/admin/users
+        return 'admin ok ----->';
+    });
+});
+
