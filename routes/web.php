@@ -14,6 +14,7 @@
 //Controller Based Route
 Route::get('/', ['uses' => 'HomeController@index'])->middleware('checkAge');
 
+
 //Simple Closure 
 Route::get('/welcome', function () {
     return view('welcome');
