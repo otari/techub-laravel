@@ -14,6 +14,9 @@
 //Controller Based Route
 Route::get('/', ['uses' => 'HomeController@index'])->middleware('checkAge');
 
+Route::get('/register', ['uses' => 'HomeController@showRegForm']);
+Route::post('/register', ['uses' => 'HomeController@register']);
+
 
 //Simple Closure 
 Route::get('/welcome', function () {

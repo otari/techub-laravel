@@ -24,8 +24,9 @@ class StoreUser extends FormRequest
     public function rules()
     {
         return [
-            'username'  => 'required|min:10|max:11',
+            'name'  => 'required|min:5|max:20',
             'email'     => 'required',
+            'password'  => 'required|min:5|max:10',
         ];
     }
 
@@ -33,8 +34,12 @@ class StoreUser extends FormRequest
     public function messages()
     {
         return [
-            'username.required' => 'სავალდებულო ველია',
-            'email.required' => 'სავალდებულო ველია',
+            'username.required' => 'სახელი სავალდებულო ველია',
+            'username.min' => 'უნდა იყოს მინ. 10 სიმბოლო',
+            'email.required' => 'ელ.ფოსტა სავალდებულო ველია',
+            'password.required' => 'password required',
+            'password.min' => 'min pwd error',
+            'password.max' => 'max pwd error',
         ];
     }
 }

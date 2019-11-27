@@ -64,26 +64,34 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+        @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                   Main Welcome [web]
+        <div class="flex-center position-ref full-height">
+            
+            <form method="POST" action="api/user/register">
+                @csrf
+                <div>
+                    <label>Name</label>
+                    <input type="text" name="name" />
                 </div>
-            </div>
+                <div>
+                    <label>email</label>
+                    <input type="text" name="email" />
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" name="password" />
+                </div>
+            
+            <button type="submit" name="submit">Submit Form</button>
+           </form>
         </div>
     </body>
 </html>

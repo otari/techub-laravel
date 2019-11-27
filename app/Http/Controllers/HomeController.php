@@ -28,12 +28,19 @@ class HomeController extends Controller
         $new_user->password = bcrypt(12345678);
         $new_user->save();
         */
-        $book =  new Book;
-        $book->title = "Romeo And Juliet";
-        $book->author = "Wiliam Shekspear";
-        $book->amount = 100;
-        $book->save();
+        // $book =  new Book;
+        // $book->title = "Romeo And Juliet";
+        // $book->author = "Wiliam Shekspear";
+        // $book->amount = 100;
+        // $book->save();
+
         return view('welcome');
+    }
+
+
+    public function showRegForm()
+    {
+        return view('regform');
     }
 
     /**
@@ -43,6 +50,6 @@ class HomeController extends Controller
      */
     public function register(StoreUser $request)
     {
-        $request->validate(['title' => 'required']);
+        dd($request->all());
     }
 }
