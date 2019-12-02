@@ -13,6 +13,18 @@ class CarController extends Controller
      */
     public function index()
     {
+        $request = [
+            "payment_id" => 25,
+            "status" => 1,
+            "reason" => "success"
+        ];
+
+        \Log::info('incoming request for loadn', $request);
+
+
+
+
+
         return response([['name'=>'bmw'], ['name'=>'skoda']]);
     }
 
