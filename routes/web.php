@@ -12,7 +12,8 @@
 */
 
 //Controller Based Route
-Route::get('/', ['uses' => 'HomeController@index'])->middleware('checkAge');
+Route::get('/', ['uses' => 'HomeController@index'])->middleware('auth');
+Route::get('/abcd', ['uses' => 'HomeController@noAuth']);
 
 Route::get('/register', ['uses' => 'HomeController@showRegForm']);
 Route::post('/register', ['uses' => 'HomeController@register']);
@@ -31,3 +32,7 @@ Route::prefix('admin')->group(function () {
     });
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

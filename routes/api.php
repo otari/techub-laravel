@@ -17,5 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('user/register', ['uses' => 'Api\UserController@index']);
+Route::get('oto', ['uses' => 'CarController@index'])->middleware('auth:api');
 
-Route::resource('cars', 'CarController');
+Route::resource('cars', 'CarController')->middleware('auth:api');

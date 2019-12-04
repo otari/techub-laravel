@@ -3,53 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreUser;
-use App\User;
-use App\Book;
 
 class HomeController extends Controller
 {
-    public function index(Request $request)
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        //Find User
-        //Change User name
-        //Save user
-        /*
-        $user = User::find(1);
-        $user->name = "new name"; //Change this
-        $user->save();
-        */
-
-        //Create New User
-        /*
-        $new_user = new User;
-        $new_user->name = 'Zauri1';
-        $new_user->email = 'zaur1@gmail.com';
-        $new_user->password = bcrypt(12345678);
-        $new_user->save();
-        */
-        // $book =  new Book;
-        // $book->title = "Romeo And Juliet";
-        // $book->author = "Wiliam Shekspear";
-        // $book->amount = 100;
-        // $book->save();
-
-        return view('welcome');
-    }
-
-
-    public function showRegForm()
-    {
-        return view('regform');
+        //$this->middleware('auth');
     }
 
     /**
-     * [register description]
-     * @param  Request $request [description]
-     * @return [type]           [description]
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function register(StoreUser $request)
+    public function index()
     {
-        dd($request->all());
+        return view('home');
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function noAuth()
+    {
+        echo 'no Auth route...';
+    }
+
 }
