@@ -18,6 +18,16 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        'App\Events\FileUploaded' => [
+            'App\Listeners\NotifyUserByEmail',
+            'App\Listeners\NotifyUserByEmail',
+            'App\Listeners\NotifyUserByEmail',
+            'App\Listeners\NotifyUserByEmail',
+            'App\Listeners\NotifyUserByEmail',
+            'App\Listeners\NotifyUserByEmail',
+            'App\Listeners\NotifyUserByEmail',
+            'App\Listeners\NotifyUserByEmail',
+        ],
     ];
 
     /**

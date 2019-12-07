@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\StoreUser;
+use App\Events\FileUploaded;
 
 class UserController extends Controller
 {
@@ -18,5 +19,11 @@ class UserController extends Controller
         $new_user->save();
 
         return response('ok');
+    }
+
+    public function fileUpload(Request $request)
+    {
+        event(new FileUploaded($request));
+        $path = $request->file('file')->store('avatars', 'public');
     }
 }
