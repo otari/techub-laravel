@@ -34,6 +34,10 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        if ($exception instanceof \App\Exceptions\DummyException) {
+            //Do something here..
+        }
+
         parent::report($exception);
     }
 

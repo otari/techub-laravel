@@ -12,7 +12,7 @@
 */
 
 //Controller Based Route
-Route::get('/', ['uses' => 'HomeController@index'])->middleware('auth');
+Route::get('/', ['uses' => 'HomeController@index']);//->middleware('auth');
 Route::get('/abcd', ['uses' => 'HomeController@noAuth']);
 
 Route::get('/register', ['uses' => 'HomeController@showRegForm']);

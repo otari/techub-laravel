@@ -24,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //throw new \Exception("Some Exception");
+        throw new \App\Exceptions\DummyException("Some Exception");
         // Storage::disk('public')->put('file2.txt', 'some text');
         // echo Storage::url('file2.txt');
         // die;
