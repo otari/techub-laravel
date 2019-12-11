@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa503b104f700e4337a4bf209a56bc8a",
+    "content-hash": "2f6270186bcca129dced4d97dec87f02",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2788,6 +2788,44 @@
                 "dump"
             ],
             "time": "2019-10-13T12:02:04+00:00"
+        },
+        {
+            "name": "techub/helloapp",
+            "version": "1.0.1",
+            "dist": {
+                "type": "path",
+                "url": "./packages/techub/helloapp",
+                "reference": "b456e43ab204d03fd733761eefa8d9b1ff88bf44"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Helloapp\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Helloapp\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": []
+            },
+            "license": [
+                "Bar"
+            ],
+            "authors": [
+                {
+                    "name": "Otar Tsilosani",
+                    "email": "otsilosani@gmail.com"
+                }
+            ],
+            "description": "Demo Package",
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
