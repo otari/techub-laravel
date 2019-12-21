@@ -11,8 +11,10 @@
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
+        "laravel/passport": "^8.0",
         "laravel/tinker": "^1.0",
-        "techub/helloapp": "^1.0"
+        "techub/helloapp": "^1.0",
+        "techub/todo": "2.0.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -59,11 +61,20 @@
             "@php artisan key:generate --ansi"
         ]
     },
-    "repositories": [{
-        "type": "path",
-        "url": "./packages/techub/helloapp",
-        "options": {
-            "symlink": true
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./packages/techub/helloapp",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "/Users/otari/Documents/techub/packages/techub/todos",
+            "options": {
+                "symlink": true
+            }
         }
-    }]
+    ]
 }
