@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\FileUploaded;
+use App\Jobs\ProcessEmail;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -26,6 +27,7 @@ class NotifyUserByEmail
      */
     public function handle(FileUploaded $event)
     {
-        \Log::info('Listener', [$event->request->all()]);
+        \Log::info('Listener executed', []);
+        ProcessEmail::dispatch();
     }
 }

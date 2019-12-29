@@ -20,13 +20,6 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\FileUploaded' => [
             'App\Listeners\NotifyUserByEmail',
-            'App\Listeners\NotifyUserByEmail',
-            'App\Listeners\NotifyUserByEmail',
-            'App\Listeners\NotifyUserByEmail',
-            'App\Listeners\NotifyUserByEmail',
-            'App\Listeners\NotifyUserByEmail',
-            'App\Listeners\NotifyUserByEmail',
-            'App\Listeners\NotifyUserByEmail',
         ],
     ];
 

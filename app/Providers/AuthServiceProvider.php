@@ -26,6 +26,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         Passport::routes();
-        //
+        Passport::tokensCan([
+            'send-sms' => 'send sms',
+            'check-status' => 'Check order status',
+        ]);
     }
 }
