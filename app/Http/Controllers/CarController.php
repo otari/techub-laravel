@@ -25,6 +25,32 @@ class CarController extends Controller
     }
 
     /**
+     * Curl Example
+     * @return [type] [description]
+     */
+    public function curlExample()
+    {
+        // Get cURL resource
+        $curl = curl_init();
+        //Set some options - we are passing in a useragent too here
+        curl_setopt_array($curl, [
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => 'https://jsonplaceholder.typicode.com/posts/1',
+            CURLOPT_USERAGENT => 'Codular Sample cURL Request'
+        ]);
+        // Send the request & save response to $resp
+        $resp = curl_exec($curl);
+        
+        if (!$resp) {
+            dd('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
+        }
+        // Close request to clear up some resources
+        curl_close($curl);
+        return response($resp);
+    }
+
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

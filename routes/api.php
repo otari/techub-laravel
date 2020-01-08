@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('user/register', ['uses' => 'Api\UserController@index']);
 Route::get('oto', ['uses' => 'CarController@index'])->middleware('auth:api');
+Route::get('curl', ['uses' => 'CarController@curlExample']);
 Route::get('zaur', ['uses' => 'CarController@index'])->middleware('scopes:send-sms');
 
 //File Upload route
